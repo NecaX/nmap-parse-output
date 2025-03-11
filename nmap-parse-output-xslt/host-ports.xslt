@@ -8,7 +8,8 @@
     <xsl:strip-space elements="*" />
     <xsl:template match="/nmaprun/host/ports/port">
         <xsl:if test="state[@state = 'open']">
-            <xsl:value-of select="../../address/@addr"/>
+            <xsl:if test="../../hostnames/hostname"> <xsl:value-of select="../../hostnames/hostname/@name"/></xsl:if>
+            <!-- <xsl:value-of select="../../address/@addr"/> -->
             <xsl:text>:</xsl:text>
             <xsl:value-of select="@portid"/>
             <xsl:text>
