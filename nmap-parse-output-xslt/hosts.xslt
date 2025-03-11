@@ -12,6 +12,7 @@
     
         <xsl:if test="state/@state='open'">
             <xsl:value-of select="../../address/@addr"/>
+            <xsl:if test="../../hostnames/hostname"> (<xsl:value-of select="../../hostnames/hostname/@name"/>)</xsl:if>
             <xsl:text>
 </xsl:text>
         </xsl:if>
